@@ -19,3 +19,5 @@ git submodule update
 ln -s $(pwd) ~/.tmux
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
 ```
+
+* add this folder to path or copy the file 'statto' to your path

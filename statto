@@ -1,0 +1,42 @@
+#!/bin/bash
+ 
+# get the uptime data
+HOSTLINE=`hostname`
+UPTIME_OUT=`uptime`
+
+UPTIME=$(cat /proc/uptime)
+UPTIME=${UPTIME%%.*}
+
+SECS=$(( UPTIME%60 ))
+MINS=$(( UPTIME/60%60 ))
+HOURS=$(( UPTIME/60/60%24 ))
+DAYS=$(( UPTIME/60/60/24 ))
+ 
+UPLINE="UP "$DAYS"d:"$HOURS"h:"${MINS#0}"m"
+
+LOADLINE="L $(echo $UPTIME_OUT | rev | cut -d':' -f 1|rev |sed 's#,#/#g' |sed 's# ##g')"
+
+USERLINE="U $(echo $UPTIME_OUT| grep -Po '[\d]* user' |sed 's/ user//')"
+
+TIMELINE="TIME $(echo $UPTIME_OUT| cut -d' ' -f1|cut -d':' -f1,2)"
+
+function get_percent {
+  if [ "$1" -eq 0 ]; then
+    echo "0"
+  else
+    echo $(( $2*100/$1 ))
+  fi  
+}
+
+MEM=$(get_percent $(free |grep Mem |awk '{print $2" "$3}') )
+SWAP=$(get_percent $(free |grep Swap |awk '{print $2" "$3}') )
+
+MEMLINE="M ${MEM}%"
+
+if [ "$SWAP" -gt 0 ]; then
+  MEMLINE="${MEMLINE}/SWP:${SWAP}%"
+fi
+
+# echo $LOADLINE, $UPLINE, $MEMLINE, $USERLINE, $HOSTLINE
+echo $LOADLINE, $MEMLINE, $USERLINE
+
