@@ -20,4 +20,13 @@ ln -s $(pwd) ~/.tmux
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
 ```
 
-* add this folder to path or copy the file 'statto' to your path
+* restart tmux (or source ~/.tmux.conf your current session)
+
+```
+tmux source ~/.tmux.conf
+```
+
+* load/update plugin cache using shift-I within tmux command
+
+* (optional) add this folder to path or copy the file 'statto' to your path
+
