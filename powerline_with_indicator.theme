@@ -1,4 +1,3 @@
-#
 # Powerline Cyan Block - Tmux Theme
 # Created by Jim Myhrberg <contact@jimeh.me>.
 #
@@ -18,7 +17,8 @@ set -g status-interval 1
 # Left side of status bar
 set -g status-left-style bg=colour233,fg=colour243
 set -g status-left-length 80
-set -g status-left "#[fg=colour232,bg=colour39,bold] #S #[fg=colour39,bg=colour100,nobold]#[fg=colour233,bg=colour100] #(whoami) #[fg=colour100,bg=colour200]#[fg=colour240,bg=colour200] #I:#P #[fg=colour200,bg=colour233,nobold]"
+set -g status-left "#[fg=colour232,bg=colour39,bold] #S #[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour233]"
+# set -g status-left "#[fg=colour232,bg=colour39,bold] #S #[fg=colour39,bg=colour240,nobold]#[fg=colour233,bg=colour240] #(whoami) #[fg=colour240,bg=colour233]#[fg=colour240,bg=colour200] #I:#P #[fg=colour200,bg=colour233,nobold]"
 
 # Right side of status bar
 # set -g status-right-style bg=colour233,fg=colour243
@@ -26,19 +26,20 @@ set -g status-left "#[fg=colour232,bg=colour39,bold] #S #[fg=colour39,bg=colour1
 # set -g status-right-length 150
 # set -g status-right "#[fg=colour235,bg=colour233]#[fg=colour240,bg=colour235] %H:%M:%S #[fg=colour240,bg=colour235]#[fg=colour233,bg=colour240] %d-%b-%y #[fg=colour245,bg=colour240]#[fg=colour232,bg=colour245,bold] #H "
 # Right side of status bar
-set -g status-right-style bg=colour233,fg=colour243
+set -g status-right-style bg=colour232,fg=colour243
 set -g status-right-length 150
 set -g status-right '#{tmux_mode_indicator}'
-set -g @tmux_mode_indicator_left_edge_character ''
-set -g @tmux_mode_indicator_left_edge_character_bg "colour233"
+set -g @tmux_mode_indicator_left_edge_character ' '
+set -g @tmux_mode_indicator_right_edge_character ' '
+set -g @tmux_mode_indicator_left_edge_character_bg "colour232"
+# set -g @tmux_mode_indicator_right_edge_character_fg "colour39"
 set -g @tmux_mode_indicator_separator '✤'
 
 # Window status
 set -g window-status-format " #I:#W#F "
-set -g window-status-current-format " #I:#W#F "
+set -g window-status-current-format " #I:#W#F "
 
 # Current window status
-# set -g window-status-current-style bg=colour39,fg=colour232
 set -g window-status-current-style bg=colour39,fg=colour232
 
 # Window with activity status
