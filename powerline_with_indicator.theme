@@ -9,6 +9,20 @@
 
 #powerline separators    ✤
 
+# how long to show pane numbers when pressing M-c q
+set -g display-panes-time 2000  # (which is 2sec)
+
+# set update frequencey (default 15 seconds)
+set -g status-interval 1
+
+# example of dynamic run
+#set -g status-left '#(net-speed.sh wlp5s0)#[default]'
+
+#set -g status-utf8 on
+# with the following line, the path in status bar and prompt is unnecessary
+set -g pane-border-status top
+set-window-option -g pane-border-format "#[bold] #{pane_index} : #[none] #{history_size} : #[bold] #{pane_current_path}"
+
 # Status update interval
 set -g status-interval 1
 
