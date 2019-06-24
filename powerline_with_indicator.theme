@@ -43,7 +43,7 @@ set -g window-status-current-format " #I:#W#F "
 # Current window status
 set -g window-status-style bg=colour232,fg=colour39
 set -g window-status-current-style bg=colour39,fg=colour232
-set -g window-status-last-style bg=colour15,fg=colour0
+set -g window-status-last-style bg=colour240,fg=colour0
 
 # Window with activity status
 set -g window-status-activity-style bg=colour233,fg=colour75
@@ -57,7 +57,7 @@ set -g status-justify centre
 # Right side of status bar
 set -g status-right-style bg=colour39,fg=colour255
 set -g status-right-length 100
-set -g status-right '#{tmux_mode_indicator}#[fg=colour255,bg=colour33] %H:%M #[fg=colour0,bg=colour15] %S'
+set -g status-right '#{tmux_mode_indicator}#[fg=colour255,bg=colour33] %H:%M #[fg=colour255,bg=colour240] %S'
 # set -g @tmux_mode_indicator_left_edge_character ''
 # set -g @tmux_mode_indicator_right_edge_character ''
 set -g @tmux_mode_indicator_background "colour39"
