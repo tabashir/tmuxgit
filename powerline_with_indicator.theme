@@ -11,7 +11,7 @@
 set -g status-interval 1
 
 # Basic status bar colors
-set -g status-style fg=white,bg=black
+set -g status-style fg=white,bg=default
 # set -g window-status-style bg=colour232,fg=colour39
 
 # Left side of status bar
@@ -41,7 +41,7 @@ set -g window-status-current-format " #I:#W#F "
 
 # Current window status
 set -g window-status-style bg=colour39,fg=colour232
-set -g window-status-current-style bg=colour39,fg=colour232
+set -g window-status-current-style bg=black,fg=white
 
 # Window with activity status
 set -g window-status-activity-style bg=colour233,fg=colour75
