@@ -21,7 +21,7 @@ set -g status-interval 1
 #set -g status-utf8 on
 # with the following line, the path in status bar and prompt is unnecessary
 set -g pane-border-status top
-set-window-option -g pane-border-format "#[bold] #{pane_index} : #[none] #{history_size} : #[bold] #{pane_current_path}"
+set-window-option -g pane-border-format "#[bold] #{pane_index} : #[none] #{history_size} : #[bold]#{pane_current_path} "
 
 # Status update interval
 set -g status-interval 1
