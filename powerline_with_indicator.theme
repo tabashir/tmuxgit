@@ -57,7 +57,8 @@ set -g status-justify centre
 # Right side of status bar
 set -g status-right-style bg=colour39,fg=colour255
 set -g status-right-length 100
-set -g status-right '#{tmux_mode_indicator}#[fg=colour255,bg=colour33] %H:%M #[fg=colour255,bg=colour240] %S'
+# set -g status-right '#{tmux_mode_indicator}#[fg=colour255,bg=colour33] %H:%M #[fg=colour255,bg=colour240] %S'
+set -g status-right '#{tmux_mode_indicator}#[fg=colour255,bg=colour33] %H:%M '
 # set -g @tmux_mode_indicator_left_edge_character ''
 # set -g @tmux_mode_indicator_right_edge_character ''
 set -g @tmux_mode_indicator_background "colour39"
